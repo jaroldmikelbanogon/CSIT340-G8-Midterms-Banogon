@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Header from '.components/Header'
-import StatCard from '.components/StatCard'
+import Header from './Header'
+import StatCard from './StatCard'
 
 function Docs(){
 const [read, setRead] = useState(0);
@@ -20,9 +20,8 @@ const [read, setRead] = useState(0);
     setBookmarks(0);
   }
 
-
   return(
-    <div>
+    <div >
         <div>
           <Header/>
           <div className="mt-6 flex gap-4">
@@ -44,11 +43,11 @@ const [read, setRead] = useState(0);
             >
               Reset
             </button>
+            <StatCard value={bookmarks} label="Bookmarks"/> 
+            <StatCard value={read} label="Mark as Read"/> 
           </div>
         </div>
-        <StatCard value={read} label="Mark as Read"/>
-        <StatCard value={bookmarks} label="Bookmarks"/>
-    </div>
+      </div>
   )
 }
 
