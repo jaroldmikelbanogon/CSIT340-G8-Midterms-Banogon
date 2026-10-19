@@ -1,5 +1,4 @@
 import { useState } from "react";
-import StatCard from "./StatCard";
 function Feedback(){
     const [yes, setYes] = useState(0);
     const [no, setNo] = useState(0);
@@ -19,7 +18,7 @@ function Feedback(){
 
     return(
     
-        <div className="px-150 pt-6">
+        <div className="px-180 pt-6">
             <button
               className="cursor-pointer rounded-lg bg-[#5C766D] px-8 py-3 text-xl font-bold text-[#EDE9E6]"
               onClick={handleYes}
@@ -36,11 +35,10 @@ function Feedback(){
               className="cursor-pointer rounded-lg border-2 border-[#5C4F4A] px-8 py-3 text-xl font-bold"
               onClick={handleReset}
             >
-              Reset
+              Clear 
             </button>
-            <div className="flex items-end justify-between px-20 pt-10">
-                <StatCard value={yes} label="Yes" />
-                <StatCard value={no} label="No" />
+            <div className="flex items-end ">
+                {yes} out of {yes+no} found this helpful
             </div>
         </div>
     )
