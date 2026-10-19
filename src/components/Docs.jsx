@@ -1,8 +1,9 @@
 import { useState } from "react";
 import Header from '.components/Header'
+import StatCard from '.components/StatCard'
 
 function Docs(){
-  const [read, setRead] = useState(0);
+const [read, setRead] = useState(0);
   const [bookmarks, setBookmarks] = useState(0);
 
     
@@ -18,6 +19,7 @@ function Docs(){
     setRead(0);
     setBookmarks(0);
   }
+
 
   return(
     <div>
@@ -44,17 +46,8 @@ function Docs(){
             </button>
           </div>
         </div>
-
-        <div className="flex gap-6">
-          <div className="w-48 rounded-xl border-2 border-[#5C4F4A] py-4 text-center">
-            <p className="text-4xl font-bold text-[#5C766D]">{read}</p>
-            <p className="mt-1 text-lg">Marked as read</p>
-          </div>
-          <div className="w-48 rounded-xl border-2 border-[#5C4F4A] py-4 text-center">
-            <p className="text-4xl font-bold text-[#5C766D]">{bookmarks}</p>
-            <p className="mt-1 text-lg">Bookmarks</p>
-          </div>
-        </div>
+        <StatCard value={read} label="Mark as Read"/>
+        <StatCard value={bookmarks} label="Bookmarks"/>
     </div>
   )
 }
